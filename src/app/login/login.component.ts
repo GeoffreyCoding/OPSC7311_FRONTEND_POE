@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
         this.errorMessage = 'Please fill out all fields';
         return;
       }
-
+      //starts login process
       this.authService.login(this.username.value, this.password.value).subscribe({
         next: (v) => {
           const { token } = v as any;
@@ -36,6 +36,7 @@ export class LoginComponent implements OnInit {
           console.log(token)
         },
         error: (e) =>{
+          //error detection
           this.hasError = true;
           this.errorMessage = 'Error logging in, check username or password!'
           console.log(e)

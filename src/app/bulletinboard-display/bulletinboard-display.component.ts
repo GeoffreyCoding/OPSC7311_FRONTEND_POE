@@ -29,13 +29,13 @@ export class BulletinboardDisplayComponent implements OnInit{
       this.router.navigate(['/login']);
       return;
     }
-
+    //gets all the bulletin board entries
     this.BulletinService.getBulletinboard_Service().subscribe({
       next: (v) => (this.BulletinBoards = v as any),
       error: (e) => console.log(e),
     })
   };
-
+  //detects delete operation
   onDelete(_id: string) {
     console.log(_id);
     this.BulletinService.deleteBulletinboard_Service(_id)

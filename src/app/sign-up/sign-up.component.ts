@@ -24,11 +24,11 @@ export class SignUpComponent {
   ) {}
 
   ngOnInit(): void {}
-
+    //starts signup process
   onSubmit(e : Event) {
     e.preventDefault();
     this.hasError = false;
-
+    //checking for empty fields
     if (
       !this.username.value ||
       !this.Email.value ||
@@ -41,15 +41,13 @@ export class SignUpComponent {
       this.errorMessage = 'Please fill out all fields';
       return;
     }
-
+    //ensuring passwords match
     if (this.password.value !== this.confirmPassword.value) {
       this.hasError = true;
       this.errorMessage = 'Passwords do not match!';
       return;
     }
-
-    console.log(this.password.value)
-
+    //creating user
     this.authService.signup(
       this.username.value,
       this.password.value,
@@ -61,7 +59,9 @@ export class SignUpComponent {
         this.router.navigate(['/login']);
       },
       error: (err) => {
+        //error for 201
         if (err.status !== 201) {
+          //error handling for all other errors
           this.hasError = true;
           this.errorMessage = 'Error creating account, please check your details';
           console.log(err);

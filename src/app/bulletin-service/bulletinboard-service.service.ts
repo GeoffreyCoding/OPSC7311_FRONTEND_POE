@@ -9,15 +9,15 @@ export class BulletinboardServiceService {
   private readonly BASE_URL = 'https://localhost:3000/api/BulletinBoards';
 
   constructor(private http:HttpClient,private auth: AuthServiceService){}
-  
+  //add bulletin board to db
   addBulletinboard_service(
     id:string,
     issueName: string,
     description: string,
     department: string
   ){
+    //get auth token
     const token = this.auth.getToken();
-    console.log(id,issueName,description,department)
     return this.http
       .post(
         this.BASE_URL,
@@ -34,7 +34,7 @@ export class BulletinboardServiceService {
         }
       )
   }
-
+  //get bulletin boards from db
   getBulletinboard_Service() {
     const token = this.auth.getToken();
     console.log(token)
@@ -45,7 +45,7 @@ export class BulletinboardServiceService {
         },
       });
   }
-
+//delete bulletin board from db
   deleteBulletinboard_Service(_id: string) {
     return this.http.delete(`${this.BASE_URL}/${_id}`, {
       headers: {

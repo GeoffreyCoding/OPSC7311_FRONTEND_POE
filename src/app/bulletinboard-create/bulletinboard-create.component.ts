@@ -31,11 +31,11 @@ export class BulletinboardCreateComponent implements OnInit {
       return;
     }
   }
-
+  //starts the process to add a post to the db
   onAddBulletinboard(e: Event) {
     e.preventDefault();
     this.errorFound = false;
-  
+  //checks if credentials are entered
     if (
       !this.issueName.value ||
       !this.description.value ||
@@ -47,7 +47,7 @@ export class BulletinboardCreateComponent implements OnInit {
       console.log(e);
       return;
     }
-  
+  //sends a request to the service to add the post with the corresponding details
     this.bulletinboardService
       .addBulletinboard_service(
         this.bulletinID.value,
@@ -64,6 +64,7 @@ export class BulletinboardCreateComponent implements OnInit {
           this.department.setValue('');
         },
         error: (e) => {
+          //error handling
           this.errorFound = true;
           this.foundErrorMessage = e.error;
           console.log(e);

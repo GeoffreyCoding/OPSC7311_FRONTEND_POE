@@ -12,7 +12,7 @@ export class AuthServiceService {
     const token = localStorage.getItem('x-auth-token');
     return token ? true : false;
   }
-
+//starts signup process
   signup(
     username: string,
     password: string,
@@ -29,18 +29,18 @@ export class AuthServiceService {
       Surname,
     });
   }
-
+//loggout users by removing auth token
 loggout(): void {
   localStorage.removeItem('x-auth-token');
 }
-
+//login users with username and passowrd
   login(username: string, password: string){
     return this.http.post(
       'https://localhost:3000/api/auth',
       { username, password }
     )
   }
-
+//gets the currently signed in users token
   getToken(): string | null {
     return localStorage.getItem('x-auth-token');
   }
