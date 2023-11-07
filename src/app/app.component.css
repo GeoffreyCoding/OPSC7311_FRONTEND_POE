@@ -1,0 +1,49 @@
+/* app.component.css */
+main {
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .title {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .navigation {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: #555;
+    margin: 0 15px;
+    padding: 10px 20px;
+    border: 2px solid transparent;
+    transition: color 0.3s, border-color 0.3s;
+  }
+  
+  .nav-link:hover,
+  .nav-link.active {
+    color: #007bff;
+    border-color: #007bff;
+  }
+  
+  /* Styling for active link - you can change the color to match your theme */
+  .active {
+    color: #fff !important;
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
+  /* Add some padding to the bottom of the main container */
+  main .container {
+    padding-bottom: 50px;
+  }
+  

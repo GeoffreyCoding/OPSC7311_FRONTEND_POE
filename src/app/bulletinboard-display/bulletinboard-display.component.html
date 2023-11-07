@@ -1,0 +1,10 @@
+<div class="bulletin-card" *ngFor="let bulletin of BulletinBoards">
+  <div class="bulletin-details">
+    <p class="bulletin-id">ID: {{ bulletin.id }}</p>
+    <p class="bulletin-_id">_ID: {{ bulletin._id }}</p>
+    <h3 class="bulletin-title">{{ bulletin.issueName }}</h3>
+    <p class="bulletin-description">{{ bulletin.description }}</p>
+    <p class="bulletin-department">{{ bulletin.department }}</p>
+  </div>
+  <button class="delete-button" (click)="onDelete(bulletin._id)">Delete</button>
+</div>

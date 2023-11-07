@@ -1,0 +1,54 @@
+/* Define styles for the bulletin cards */
+.bulletin-card {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Style bulletin details */
+  .bulletin-details {
+    flex: 1;
+  }
+  
+  .bulletin-id {
+    font-size: 14px;
+    color: #888;
+  }
+  
+  .bulletin-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 5px 0;
+  }
+  
+  .bulletin-description {
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .bulletin-department {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  /* Style the delete button */
+  .delete-button {
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .delete-button:hover {
+    background-color: #d32f2f;
+  }
+  
